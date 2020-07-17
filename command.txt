@@ -1,0 +1,815 @@
+
+C:\Users\Palak>git --version
+git version 2.16.2.windows.1
+
+C:\Users\Palak>cd Desktop
+
+C:\Users\Palak\Desktop>mkdir git_intro
+
+C:\Users\Palak\Desktop>cd git_intro
+
+C:\Users\Palak\Desktop>git update-git-for-windows
+Git for Windows 2.16.2.windows.1 (32bit)
+Update 2.27.0.windows.1 is available
+Download and install Git for Windows 2.27.0 [N/y]? y
+################################################################################################ 100.0%################################################################################################# 100.0%
+
+C:\Users\Palak\Desktop>git --version
+git version 2.27.0.windows.1
+
+C:\Users\Palak\Desktop>cd git_intro
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+15-07-2020  15:33    <DIR>          .
+15-07-2020  15:33    <DIR>          ..
+15-07-2020  15:44                22 hello.py
+               1 File(s)             22 bytes
+               2 Dir(s)  593,178,152,960 bytes free
+
+C:\Users\Palak\Desktop\git_intro>git init
+Initialized empty Git repository in C:/Users/Palak/Desktop/git_intro/.git/
+
+
+C:\Users\Palak\Desktop\git_intro>rem git_intro
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Palak\Desktop\git_intro>git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+C:\Users\Palak\Desktop\git_intro>git add hello.py
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.py
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "printing normal"
+[master (root-commit) e5af863] printing normal
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.py
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "changed"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Palak\Desktop\git_intro>git add hello.py
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.py
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "print change"
+[master aa5e221] print change
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>type con > text.txt
+
+C:\Users\Palak\Desktop\git_intro>git add text.txt
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   text.txt
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "text file"
+[master edebdc0] text file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 text.txt
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit edebdc0f38f2252f6d2b62a1bd1a9706c907003f (HEAD -> master)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:05:50 2020 +0530
+
+    text file
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit edebdc0f38f2252f6d2b62a1bd1a9706c907003f (HEAD -> master)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:05:50 2020 +0530
+
+    text file
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git checkout aa5e221957f0ac79cdecdd0332e465f70987f844
+Note: switching to 'aa5e221957f0ac79cdecdd0332e465f70987f844'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at aa5e221 print change
+
+C:\Users\Palak\Desktop\git_intro>git status
+HEAD detached at aa5e221
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git status
+HEAD detached at aa5e221
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit aa5e221957f0ac79cdecdd0332e465f70987f844 (HEAD)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git status
+HEAD detached at aa5e221
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Palak\Desktop\git_intro>git add hello.py
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "a variable now"
+[detached HEAD 9ecad41] a variable now
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit 9ecad417ffdff1291ee80e80ccc2f4ee3c62780e (HEAD)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:19:10 2020 +0530
+
+    a variable now
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git status
+HEAD detached from aa5e221
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git checkout 9ecad417ffdff1291ee80e80ccc2f4ee3c62780e
+HEAD is now at 9ecad41 a variable now
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+15-07-2020  16:13    <DIR>          .
+15-07-2020  16:13    <DIR>          ..
+15-07-2020  16:17                15 hello.py
+               1 File(s)             15 bytes
+               2 Dir(s)  593,170,731,008 bytes free
+
+C:\Users\Palak\Desktop\git_intro>git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  9ecad41 a variable now
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 9ecad41
+
+Switched to branch 'master'
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+15-07-2020  16:24    <DIR>          .
+15-07-2020  16:24    <DIR>          ..
+15-07-2020  16:24                21 hello.py
+15-07-2020  16:24                 0 text.txt
+               2 File(s)             21 bytes
+               2 Dir(s)  593,171,259,392 bytes free
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit edebdc0f38f2252f6d2b62a1bd1a9706c907003f (HEAD -> master)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:05:50 2020 +0530
+
+    text file
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git revert --no-commit aa5e221957f0ac79cdecdd0332e465f70987f844..HEAD
+Removing text.txt
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+You are currently reverting commit edebdc0.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    text.txt
+
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+You are currently reverting commit edebdc0.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    text.txt
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "added text file again"
+[master 77ff7e0] added text file again
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 text.txt
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>TYPE CON> worl.html
+
+C:\Users\Palak\Desktop\git_intro>
+C:\Users\Palak\Desktop\git_intro>ren worl.html world.html
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        world.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Palak\Desktop\git_intro>git add *.html
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   world.html
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "add html file"
+[master 1bb91c2] add html file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 world.html
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>log
+'log' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+15-07-2020  16:50    <DIR>          .
+15-07-2020  16:50    <DIR>          ..
+15-07-2020  16:24                21 hello.py
+15-07-2020  16:50                 0 world.html
+               2 File(s)             21 bytes
+               2 Dir(s)  593,178,333,184 bytes free
+
+C:\Users\Palak\Desktop\git_intro>dir -a
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+File Not Found
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+15-07-2020  16:50    <DIR>          .
+15-07-2020  16:50    <DIR>          ..
+15-07-2020  16:24                21 hello.py
+15-07-2020  16:50                 0 world.html
+               2 File(s)             21 bytes
+               2 Dir(s)  593,179,000,832 bytes free
+
+C:\Users\Palak\Desktop\git_intro>touch index.html
+'touch' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Palak\Desktop\git_intro>git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+C:\Users\Palak\Desktop\git_intro>git config --list
+http.sslcainfo=C:/Program Files (x86)/Git/mingw32/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+pack.packsizelimit=2g
+credential.helper=manager
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+user.email=palakchauhan381@gmail.com
+user.name=Palak Chavan
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+C:\Users\Palak\Desktop\git_intro>TYPE NUL >.gitignore
+
+C:\Users\Palak\Desktop\git_intro>TYPE NUL > log.txt
+
+C:\Users\Palak\Desktop\git_intro>git add .
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit 1bb91c2db5d8b09e858a305bab6e6eff67241e6d (HEAD -> master)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:52:31 2020 +0530
+
+    add html file
+
+commit 77ff7e0d66c286d94cacdda09aea9b6dd72a1698
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:49:29 2020 +0530
+
+    added text file again
+
+commit edebdc0f38f2252f6d2b62a1bd1a9706c907003f
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:05:50 2020 +0530
+
+    text file
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>list
+'list' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Palak\Desktop\git_intro>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 1CF5-3026
+
+ Directory of C:\Users\Palak\Desktop\git_intro
+
+17-07-2020  12:22    <DIR>          .
+17-07-2020  12:22    <DIR>          ..
+17-07-2020  12:22                 9 .gitignore
+15-07-2020  16:24                21 hello.py
+17-07-2020  12:22                 0 log.txt
+15-07-2020  16:50                 0 world.html
+               4 File(s)             30 bytes
+               2 Dir(s)  592,976,023,552 bytes free
+
+C:\Users\Palak\Desktop\git_intro>git commit -m 'ignored files'
+error: pathspec 'files'' did not match any file(s) known to git
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+C:\Users\Palak\Desktop\git_intro>git commit -m 'ignored file'
+error: pathspec 'file'' did not match any file(s) known to git
+
+C:\Users\Palak\Desktop\git_intro>git commit -m 'ignored file
+error: pathspec 'file' did not match any file(s) known to git
+
+C:\Users\Palak\Desktop\git_intro>git commit -m 'ignored'
+[master 6620035] 'ignored'
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git branch
+
+* master
+
+C:\Users\Palak\Desktop\git_intro>git checkout -b feature1
+Switched to a new branch 'feature1'
+
+C:\Users\Palak\Desktop\git_intro>git branch
+* feature1
+  master
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch feature1
+nothing to commit, working tree clean
+
+C:\Users\Palak\Desktop\git_intro>git checkout master
+Switched to branch 'master'
+
+C:\Users\Palak\Desktop\git_intro>git branch
+  feature1
+* master
+
+C:\Users\Palak\Desktop\git_intro>git checkout feature1
+Switched to branch 'feature1'
+
+
+C:\Users\Palak\Desktop\git_intro>git checkout master
+Switched to branch 'master'
+
+C:\Users\Palak\Desktop\git_intro>git merge feature1
+Already up to date.
+
+
+C:\Users\Palak\Desktop\git_intro>git log
+commit 6620035ddc6fb9e2fafcc11feff17427206b268a (HEAD -> master, feature1)
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Fri Jul 17 12:34:23 2020 +0530
+
+    'ignored'
+
+commit 1bb91c2db5d8b09e858a305bab6e6eff67241e6d
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:52:31 2020 +0530
+
+    add html file
+
+commit 77ff7e0d66c286d94cacdda09aea9b6dd72a1698
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:49:29 2020 +0530
+
+    added text file again
+
+commit edebdc0f38f2252f6d2b62a1bd1a9706c907003f
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:05:50 2020 +0530
+
+    text file
+
+commit aa5e221957f0ac79cdecdd0332e465f70987f844
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 16:04:05 2020 +0530
+
+    print change
+
+commit e5af8637386db02f38896cb738d466f56bee249a
+Author: Palak Chavan <palakchauhan381@gmail.com>
+Date:   Wed Jul 15 15:59:03 2020 +0530
+
+    printing normal
+
+C:\Users\Palak\Desktop\git_intro>git remote add origin https://github.com/palakchauhan/intro-to-git.git
+
+C:\Users\Palak\Desktop\git_intro>git push -u origin master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (15/15), 1.33 KiB | 90.00 KiB/s, done.
+Total 15 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/palakchauhan/intro-to-git.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\Palak\Desktop\git_intro>git remote
+origin
+
+C:\Users\Palak\Desktop\git_intro>type con > contact.html
+
+C:\Users\Palak\Desktop\git_intro>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Palak\Desktop\git_intro>git add .
+
+C:\Users\Palak\Desktop\git_intro>git commit -m "new change to check push"
+[master a6e0a37] new change to check push
+ 1 file changed, 1 insertion(+)
+ create mode 100644 contact.html
+
+
+C:\Users\Palak\Desktop\git_intro>git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 762 bytes | 1024 bytes/s, done.
+From https://github.com/palakchauhan/intro-to-git
+   6620035..7891449  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+C:\Users\Palak\Desktop\git_intro>git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 554 bytes | 138.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/palakchauhan/intro-to-git.git
+   7891449..e1dfae6  master -> master
+
+C:\Users\Palak\Desktop\git_intro>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
